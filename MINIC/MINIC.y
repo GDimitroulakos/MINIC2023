@@ -37,7 +37,7 @@ extern FILE *yyin;
 %%
 
 compile_unit: statement							
-			| compile_unit statement			
+			| compile_unit statement 			
 			| function_definition				
 			| declaration ';'
 			| compile_unit function_definition 
@@ -52,7 +52,8 @@ fargs :   declaration
 		| fargs ',' declaration
 		;
 
-declaration : type_specifier IDENTIFIER
+declaration : type_specifier IDENTIFIER 
+			| type_specifier IDENTIFIER '=' expression
 			;
 
 type_specifier : INT

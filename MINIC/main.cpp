@@ -9,5 +9,6 @@ void main (int argc ,char **argv){
 	fopen_s(&yyin, "test.txt", "r");
 	yy::parser* p = new yy::parser();
 	p->parse();
-	
+
+		
 }
