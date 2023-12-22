@@ -136,12 +136,16 @@
     </Bison>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Composite.h" />
+    <ClInclude Include="CompositeConcrete.h" />
     <ClInclude Include="location.hh" />
     <ClInclude Include="MINIC.tab.h" />
     <ClInclude Include="position.hh" />
     <ClInclude Include="stack.hh" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Composite.cpp" />
+    <ClCompile Include="CompositeConcrete.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MINIC.flex.cpp" />
     <ClCompile Include="MINIC.tab.cpp" />
