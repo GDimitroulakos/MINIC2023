@@ -4,14 +4,14 @@
 CSTNode* g_root = NULL;
 int CSTNode::ms_serialCounter = 0;
 
-CSTNode::CSTNode(int type, string intName, int num, ...) :m_nodeType{ type } {
+CSTNode::CSTNode(int type, int num, string typeName, ...) :m_nodeType{ type } {
 	va_list argumentList;
 	CSTNode* child;
 
 	va_start(argumentList, num);
 
 	m_serial = ms_serialCounter++;
-	m_graphvizLabel = intName;
+	m_graphvizLabel = typeName;
 	m_children = new list<CSTNode*>();
 
 	for (int i = 0; i < num; i++) {

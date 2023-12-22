@@ -10,8 +10,16 @@ const char* g_nodeTypeLabels[] = { "COMPILEUNIT","FUNCTIONDEFINITION" ,"FORMALAR
 								  "NT_EXPRESSION_OR", "NT_EXPRESSION_NOT", "NT_EXPRESSION_GT", "NT_EXPRESSION_GTE", "NT_EXPRESSION_LT",
 								  "NT_EXPRESSION_LTE", "NT_EXPRESSION_EQUAL", "NT_EXPRESSION_NEQUAL", "NT_IDENTIFIER" };
 
-CCompileUnit::CCompileUnit(CSTNode* arg1, CSTNode* arg2) : CSTNode(NT_COMPILEUNIT, 2, arg1, arg2) {}
-CCompileUnit::CCompileUnit(CSTNode* arg1) :CSTNode(NT_COMPILEUNIT, 1, arg1) {}
+CCompileUnit::CCompileUnit(CSTNode* arg1, CSTNode* arg2) :
+CSTNode(NT_COMPILEUNIT, 2, g_nodeTypeLabels[NT_COMPILEUNIT], arg1, arg2) {}
+CCompileUnit::CCompileUnit(CSTNode* arg1) :
+CSTNode(NT_COMPILEUNIT, 1, g_nodeTypeLabels[NT_COMPILEUNIT], arg1) {}
+
+
+
+
+
+
 CFunctionDefinition::CFunctionDefinition(CSTNode* id, CSTNode* fargs, CSTNode* compoundst) :CSTNode(NT_FUNCTIONDEFINITION, 3, id, fargs, compoundst) {}
 CFunctionDefinition::CFunctionDefinition(CSTNode* id, CSTNode* compoundst) :CSTNode(NT_FUNCTIONDEFINITION, 3, id, new CFormalArgs(), compoundst) {}
 CFormalArgs::CFormalArgs(CSTNode* fargs, CSTNode* id) :CSTNode(NT_FORMALARGS, 2, fargs, id) {}
